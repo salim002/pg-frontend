@@ -18,6 +18,9 @@ export default function Home() {
         if(res.data.length===0){
           setFlag(true);
         }
+        else{
+          setFlag(false);
+        }
       } catch(error){
         console.log(error);
       }
@@ -65,7 +68,7 @@ export default function Home() {
     <div className="home">
       <div className="posts">
       {!flag && posts.length===0 && <div style={{margin: "0 auto", fontSize: "40px"}} >Loading data from server... Please Wait.</div>}
-      {flag && <div style={{margin: "0 auto", fontSize: "40px"}} >No Post Found :(</div>}
+      {flag && <div style={{margin: "0 auto", fontSize: "40px"}} >No Posts Found :(</div>}
         {posts.map((post) => (
           <div className="post" key={post.id}>
             <div className="img">
